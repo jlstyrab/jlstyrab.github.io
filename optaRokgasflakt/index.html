@@ -60,6 +60,13 @@
         seriemonitor på 115200 baud. Status skrivs varje sekund. Vid start
         skrivs <em>svarta lådans</em> rapport: antal omstarter, hur många som
         var oväntade och vad enheten gjorde innan senaste omstart.</li>
+    <li><strong>Logg med mobilen:</strong> fungerar med Android-telefon (inte
+        iPhone). Telefonen behöver stöd för USB OTG och en OTG-kabel eller
+        -adapter till USB-C. Använd appen <em>Serial USB Terminal</em> och
+        ställ in 115200 baud. På vissa telefoner måste OTG slås på i
+        inställningarna först.
+        <span class="obs">Välj aldrig 1200 baud — då startar Optan om i
+        uppladdningsläge och styrningen står still tills den startas om.</span></li>
     <li><strong>Utgångstest:</strong> håll USER-knappen intryckt i 2 sekunder.
         Korta tryck stegar sedan D0 → D1 → D2 → D3 → alla av. Håll 2 sekunder
         igen för att avsluta (annars avslutas testet efter 10 minuter).
