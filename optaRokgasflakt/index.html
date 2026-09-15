@@ -18,6 +18,14 @@
            padding: .15rem .55rem; border-radius: .3rem; font-size: .8rem;
            background: #1c4587; color: #fff; }
   a { color: #1c4587; }
+  .fakta { display: grid; grid-template-columns: max-content 1fr; gap: .3rem 1rem;
+           margin: .8rem 0; padding: .9rem 1rem; background: #f3f5f9;
+           border-radius: .4rem; }
+  .fakta dt { color: #555; }
+  .fakta dd { margin: 0; font-weight: 600; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .45rem 0; }
+  .obs { font-size: .92rem; color: #7a3b00; }
   .fine { margin-top: 2.5rem; font-size: .85rem; color: #666; }
 </style>
 </head>
@@ -25,26 +33,53 @@
 <main>
   <img class="logga" src="/assets/jlstyr-logo.png" alt="JL STYR AB">
   <h1>optaRokgasflakt <span class="badge">K0</span></h1>
-  <p>Styrning av r&ouml;kgasfl&auml;ktar i tre trapphus. Frist&aring;ende
-     Arduino Opta utan n&auml;tverksanslutning — startslinga med kodmotst&aring;nd,
-     linje&ouml;vervakning och larm via tidrel&auml;.</p>
+  <p>Styrning av rökgasfläktar i tre trapphus. Fristående Arduino Opta utan
+     nätverksanslutning — startslinga med kodmotstånd, linjeövervakning och
+     inbyggd händelselogg.</p>
 
-  <h2>Koden till din anl&auml;ggning</h2>
-  <p>All programkod, f&auml;rdigbyggd firmware och
-     drifts&auml;ttningsinstruktioner finns i repot
+  <h2>Driftinformation</h2>
+  <dl class="fakta">
+    <dt>Firmware</dt><dd>K0 v3.3.0</dd>
+    <dt>Driftsatt</dt><dd>11 september 2026</dd>
+    <dt>Nätverk</dt><dd>Inget — all styrning sker lokalt</dd>
+  </dl>
+  <p>Versionen på enhetens etikett och i startutskriften på USB-porten ska
+     stämma med versionen ovan.</p>
+
+  <h2>Kontrollera status på plats</h2>
+  <ul>
+    <li><strong>Lysdioden uppe till vänster</strong> blinkar kort varje
+        sekund — programmet lever.</li>
+    <li><strong>D0, D1, D2</strong> lyser när fläkten i trapphus A, B
+        respektive C är startad. <strong>D3</strong> lyser fast när allt är
+        friskt.</li>
+    <li><strong>Röd lysdiod</strong> blinkar vid fel på startslingan:
+        långsamt = avbrott, snabbt = kortslutning. Fläktarna behåller då sitt
+        senaste läge.</li>
+    <li><strong>Logg:</strong> anslut en dator till USB-C och öppna en
+        seriemonitor på 115200 baud. Status skrivs varje sekund. Vid start
+        skrivs <em>svarta lådans</em> rapport: antal omstarter, hur många som
+        var oväntade och vad enheten gjorde innan senaste omstart.</li>
+    <li><strong>Utgångstest:</strong> håll USER-knappen intryckt i 2 sekunder.
+        Korta tryck stegar sedan D0 → D1 → D2 → D3 → alla av. Håll 2 sekunder
+        igen för att avsluta (annars avslutas testet efter 10 minuter).
+        <span class="obs">Obs: testet startar fläktarna på riktigt.</span></li>
+  </ul>
+
+  <h2>Koden till din anläggning</h2>
+  <p>All programkod, färdigbyggd firmware och driftsättningsinstruktioner
+     finns i repot
      <a href="https://github.com/jlstyrab/optaRokgasflakt">github.com/jlstyrab/optaRokgasflakt</a>.</p>
-  <p>Repot &auml;r f&ouml;r n&auml;rvarande privat. Som anl&auml;ggnings&auml;gare
-     har du r&auml;tt till koden (MIT-licens) — h&ouml;r av dig s&aring; f&aring;r
-     du &aring;tkomst. Ingen inl&aring;sning: du eller valfri entrepren&ouml;r
-     f&aring;r l&auml;sa, &auml;ndra och flasha om systemet.</p>
+  <p>Repot är för närvarande privat. Som anläggningsägare har du rätt till
+     koden (MIT-licens) — hör av dig så får du åtkomst. Ingen inlåsning: du
+     eller valfri entreprenör får läsa, ändra och flasha om systemet.</p>
 
   <h2>Kontakt</h2>
   <p><a href="https://jlstyr.se">jlstyr.se</a> &middot;
      <a href="mailto:johan@jlstyr.se">johan@jlstyr.se</a></p>
 
-  <p class="fine">Firmwareversion st&aring;r p&aring; enhetens etikett och i
-     boot-bannern p&aring; USB-serieporten (115200 baud).
-     M&auml;rkning: <a href="https://github.com/jlstyrab">K-niv&aring;er</a>.</p>
+  <p class="fine">Sidan uppdaterad 15 september 2026.
+     Märkning: <a href="https://github.com/jlstyrab">K-nivåer</a>.</p>
 </main>
 </body>
 </html>
