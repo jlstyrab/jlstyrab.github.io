@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- NAR REPOT GORS PUBLIKT: aktivera raden nedan sa hoppar sidan direkt till koden.
+<meta http-equiv="refresh" content="0; url=https://github.com/jlstyrab/carlsberg-miljocontainer">
+-->
+<title>carlsberg-miljocontainer — JL STYR AB</title>
+<style>
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+         background: #ffffff; color: #1c1c1c; line-height: 1.55; }
+  main { max-width: 40rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+  .logga { max-width: 11rem; height: auto; display: block; }
+  h1 { font-size: 1.7rem; margin: .3rem 0 .8rem; overflow-wrap: anywhere; }
+  h2 { font-size: 1.05rem; margin-top: 2rem; }
+  .badge { display: inline-block; vertical-align: middle; margin-left: .4rem;
+           padding: .15rem .55rem; border-radius: .3rem; font-size: .8rem;
+           background: #1c4587; color: #fff; }
+  a { color: #1c4587; overflow-wrap: anywhere; }
+  .fakta { display: grid; grid-template-columns: max-content 1fr; gap: .3rem 1rem;
+           margin: .8rem 0; padding: .9rem 1rem; background: #f3f5f9;
+           border-radius: .4rem; }
+  .fakta dt { color: #555; }
+  .fakta dd { margin: 0; font-weight: 600; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .45rem 0; }
+  .obs { font-size: .92rem; color: #7a3b00; }
+  .atgard { color: #a3400a; }
+  .fine { margin-top: 2.5rem; font-size: .85rem; color: #666; }
+</style>
+</head>
+<body>
+<main>
+  <img class="logga" src="/assets/jlstyr-logo.png" alt="JL STYR AB">
+  <h1>carlsberg-miljocontainer <span class="badge">K2</span></h1>
+  <p>Styrning av en brandskyddad miljöcontainer för farliga ämnen (Denios
+     FBMplus) hos Carlsberg Sverige AB: klimat (kyla/värme), förångar- och
+     frånluftsfläkt, förångarskydd och larm. En Arduino Opta med två
+     expansionsmoduler ersätter den ursprungliga regulatorn. En läsplatta i
+     skåpet fungerar som operatörspanel.</p>
+
+  <h2>Driftinformation</h2>
+  <dl class="fakta">
+    <dt>Firmware</dt><dd>K2 v0.1.0</dd>
+    <dt>Status</dt><dd class="atgard">Under ombyggnad — ej driftsatt</dd>
+    <dt>Hårdvara</dt><dd>Opta + A0602 + D1608E</dd>
+    <dt>Panel</dt><dd>Läsplatta (KatapultOPTA_HMI)</dd>
+  </dl>
+  <p>Versionen på enhetens etikett ska stämma med versionen ovan och med
+     programraden i panelens statuskort.</p>
+
+  <h2>Säkerhet</h2>
+  <p>Brandlarm, dörrstängning, motorskydd och säkringar är hårdkopplade och
+     fungerar oberoende av styrenheten. Styrenheten stoppar dessutom fläktar
+     och kompressor vid brandlarm, och larmen till kundens system går via
+     potentialfria reläer, utan beroende av nätverk.</p>
+
+  <h2>Kontrollera status på plats</h2>
+  <ul>
+    <li><strong>Grön lysdiod ovanför RESET</strong> blinkar varje halvsekund —
+        programmet lever.</li>
+    <li><strong>D0–D3</strong> visar reläerna: frånluftsfläkt, förångarfläkt,
+        frigivning kompressor och summalarm.</li>
+    <li><strong>Röd lysdiod ovanför RESET</strong> = varning: fast sken =
+        säkert läge eller osäker tid, snabb blink = givarfel, långsam blink =
+        en utgång står i handläge mot ett aktivt skydd.</li>
+    <li><strong>Panelen</strong> visar temperaturer, driftläge och aktiva larm.
+        Ändringar kräver inloggning. Klimataggregatets egna felkoder visas på
+        Mitsubishi-fjärrkontrollen i skåpet.</li>
+    <li><strong>Logg:</strong> anslut en dator till USB-C och öppna en
+        seriemonitor på 115200 baud med DTR påslaget.
+        <span class="obs">Välj aldrig 1200 baud — då startar Optan om i
+        uppladdningsläge och styrningen står still tills den startas om.</span></li>
+  </ul>
+
+  <h2>Koden till din anläggning</h2>
+  <p>Konfiguration, funktionsbeskrivning, IO-lista och färdigbyggd firmware
+     finns i repot
+     <a href="https://github.com/jlstyrab/carlsberg-miljocontainer">github.com/jlstyrab/carlsberg-miljocontainer</a>.</p>
+  <p>Repot är för närvarande privat. Som anläggningsägare har du rätt till
+     koden (MIT-licens) — hör av dig så får du åtkomst. Ingen inlåsning: du
+     eller valfri entreprenör får läsa, ändra och flasha om systemet.</p>
+
+  <h2>Kontakt</h2>
+  <p><a href="https://jlstyr.se">jlstyr.se</a> &middot;
+     <a href="mailto:johan@jlstyr.se">johan@jlstyr.se</a></p>
+
+  <p class="fine">Sidan uppdaterad 25 oktober 2026.
+     Märkning: <a href="https://github.com/jlstyrab">K-nivåer</a>.</p>
+</main>
+</body>
+</html>
