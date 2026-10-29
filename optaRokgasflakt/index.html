@@ -44,7 +44,7 @@
 
   <h2>Driftinformation</h2>
   <dl class="fakta">
-    <dt>Firmware</dt><dd>K0 v3.4.0</dd>
+    <dt>Firmware</dt><dd>K0 v3.5.0</dd>
     <dt>Driftsatt</dt><dd>11 september 2026</dd>
     <dt>Nätverk</dt><dd>Inget — all styrning sker lokalt</dd>
   </dl>
@@ -54,12 +54,17 @@
   <h2>Driftstatus</h2>
   <dl class="fakta">
     <dt>Trapphus A</dt><dd>I drift</dd>
-    <dt>Trapphus B</dt><dd class="atgard">Ur funktion — motorskydd byts</dd>
+    <dt>Trapphus B</dt><dd>I drift</dd>
     <dt>Trapphus C</dt><dd>I drift</dd>
   </dl>
-  <p>Senast kontrollerad 2 oktober 2026.</p>
+  <p>Senast kontrollerad 29 oktober 2026.</p>
 
   <h2>Servicehistorik</h2>
+  <p><strong>29 oktober 2026 — motorskydd bytt.</strong> Nytt motorskydd
+     monterat för fläkten i trapphus B. Provkörd med start från
+     startslingan: fläkten går som den ska. Styrenheten hade då gått 27
+     dygn utan en enda omstart. Firmware uppdaterad till K0 v3.5.0, som
+     räknar starter och drifttid per trapphus.</p>
   <p><strong>2 oktober 2026 — fläkt B startar inte.</strong> Styrningen
      kontrollerad på plats: Optans utgång drar som den ska när knappen i
      trapphus B aktiveras, och startslingan mäter rätt värde. Felet ligger
@@ -93,7 +98,9 @@
     <li><strong>Logg:</strong> anslut en dator till USB-C och öppna en
         seriemonitor på 115200 baud. Status skrivs varje sekund. När du ansluter
         skrivs <em>svarta lådans</em> rapport: antal omstarter, hur många som
-        var oväntade och vad enheten gjorde innan senaste omstart.</li>
+        var oväntade och vad enheten gjorde innan senaste omstart. Rapporten
+        visar också hur länge enheten gått sedan dess, samt antal starter och
+        sammanlagd drifttid per trapphus.</li>
     <li><strong>Logg med mobilen:</strong> fungerar med Android-telefon (inte
         iPhone). Telefonen behöver stöd för USB OTG och en OTG-kabel eller
         -adapter till USB-C. Använd appen <em>Serial USB Terminal</em>,
@@ -120,7 +127,7 @@
   <p><a href="https://jlstyr.se">jlstyr.se</a> &middot;
      <a href="mailto:johan@jlstyr.se">johan@jlstyr.se</a></p>
 
-  <p class="fine">Sidan uppdaterad 2 oktober 2026.
+  <p class="fine">Sidan uppdaterad 29 oktober 2026.
      Märkning: <a href="https://github.com/jlstyrab">K-nivåer</a>.</p>
 </main>
 </body>
